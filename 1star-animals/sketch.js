@@ -16,8 +16,6 @@ function draw()
 {
     background(0);
     animal1.display();
-    
-
 }
 
 function keyPressed() 
