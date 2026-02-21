@@ -43,22 +43,18 @@ function keyPressed()
 
 function mousePressed()
 {
-    /*
-    if (mouseX === animal1.sendCordX && mouseY === animal1.sendCordY)
+    if (animal1.isMouseOver(mouseX, mouseY))
     {
         currentAnimal = animal1;
     }
-    else if (mouseX === animal2.sendCordX && mouseY === animal2.sendCordY)
+    else if (animal2.isMouseOver(mouseX, mouseY))
     {
         currentAnimal = animal2;
     }
-    else if (mouseX === animal3.sendCordX && mouseY === animal3.sendCordY)
+    else if (animal3.isMouseOver(mouseX, mouseY))
     {
         currentAnimal = animal3;
     }
-    */
-
-    currentAnimal = animal1;
 }
 
 
@@ -111,5 +107,17 @@ class Animal
 
     sendCordY()
     {return(this.#y)}
+    
+    isMouseOver(mx, my)
+    {
+        return (
+            mx >= this.#x &&
+            mx <= this.#x + this.image.width &&
+            my >= this.#y &&
+            my <= this.#y + this.image.height
+        );
+    }
+
+    
 }
 
